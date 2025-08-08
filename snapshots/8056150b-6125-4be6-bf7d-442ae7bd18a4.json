@@ -1,0 +1,29 @@
+{
+  "project_status": {
+    "id": "9b51471c-00ca-4d99-b97e-0f806500ee39",
+    "name": "DeliveryOpsPOC",
+    "url": "https://dev.azure.com/winwire/_apis/projects/9b51471c-00ca-4d99-b97e-0f806500ee39",
+    "state": "wellFormed",
+    "revision": 407879606,
+    "_links": {
+      "self": {
+        "href": "https://dev.azure.com/winwire/_apis/projects/9b51471c-00ca-4d99-b97e-0f806500ee39"
+      },
+      "collection": {
+        "href": "https://dev.azure.com/winwire/_apis/projectCollections/f0d0995d-0015-493d-b432-0412f632db52"
+      },
+      "web": {
+        "href": "https://dev.azure.com/winwire/DeliveryOpsPOC"
+      }
+    },
+    "visibility": "private",
+    "defaultTeam": {
+      "id": "396a551b-8890-4d54-ba65-e2e95ffa039f",
+      "name": "DeliveryOpsPOC Team",
+      "url": "https://dev.azure.com/winwire/_apis/projects/9b51471c-00ca-4d99-b97e-0f806500ee39/teams/396a551b-8890-4d54-ba65-e2e95ffa039f"
+    },
+    "lastUpdateTime": "2025-07-28T12:27:04.79Z"
+  },
+  "risks": [],
+  "alerts": []
+}

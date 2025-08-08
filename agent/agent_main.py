@@ -11,15 +11,16 @@ class AgentState(TypedDict, total=False):
 # Build the graph
 builder = StateGraph(AgentState)
 
-builder.add_node("fetch_status", fetch_status)
+# builder.add_node("fetch_status", fetch_status)
 builder.add_node("check_risks", check_risks)
 builder.add_node("emit_alerts", emit_alerts)
 builder.add_node("record_snapshot", record_snapshot)
 builder.add_node("extract_project_status", extract_project_status)
 
-builder.set_entry_point("fetch_status")
+# builder.set_entry_point("fetch_status")
 
-builder.add_edge("fetch_status", "extract_project_status")
+# builder.add_edge("fetch_status", "extract_project_status")
+builder.set_entry_point("extract_project_status")
 builder.add_edge("extract_project_status", "check_risks")
 builder.add_edge("check_risks", "emit_alerts")
 builder.add_edge("emit_alerts", "record_snapshot")

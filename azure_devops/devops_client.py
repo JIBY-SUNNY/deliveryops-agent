@@ -1,22 +1,20 @@
-import requests
 import os
+import requests
+from requests.auth import HTTPBasicAuth
 from dotenv import load_dotenv
+
 load_dotenv()
 
-ADO_ORG = os.getenv("ADO_ORG")
-ADO_PROJECT = os.getenv("ADO_PROJECT")
-ADO_PAT = os.getenv("ADO_PAT")
-ADO_API = f"https://dev.azure.com/{ADO_ORG}/{ADO_PROJECT}/_apis"
+AZURE_PAT = os.getenv("AZURE_PAT")
+AZURE_ORG = os.getenv("AZURE_ORG")
+AZURE_PROJECT = os.getenv("AZURE_PROJECT")
 
-headers = {
-    "Authorization": f"Basic {os.getenv('ADO_BASIC_AUTH')}",
-    "Content-Type": "application/json"
-}
+BASE_URL = f"https://dev.azure.com/{AZURE_ORG}"
+auth = HTTPBasicAuth("", AZURE_PAT)
+headers = {"Content-Type": "application/json"}
 
 def get_project_status():
-    # Placeholder for now
-    return {
-        "milestone_due": True,
-        "progress": False,
-        "blocked_items": 4
-    }
+    url = f"{BASE_URL}/_apis/projects/{AZURE_PROJECT}?api-version=7.0"
+    response = requests.get(url, auth=auth, headers=headers)
+    response.raise_for_status()
+    return response.json()

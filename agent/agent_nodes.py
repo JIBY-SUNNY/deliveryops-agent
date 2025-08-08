@@ -25,19 +25,26 @@ def record_snapshot(state):
     print("Snapshot:", state)
     return {}
 
-from utils.azure_devops import get_work_items, get_iterations, get_pipeline_status
-
 def extract_project_status(state):
-    work_items = get_work_items()
-    sprint = get_iterations()
-    pipeline = get_pipeline_status()
+    status = get_project_status()
+    return {"project_status": status}
 
-    return {
-        "project_status": {
-            "work_items": work_items,
-            "current_sprint": sprint,
-            "pipeline_status": pipeline
-        },
-        "risks": [],
-        "alerts": []
-    }
+# from utils.azure_devops import get_work_items, get_iterations, get_pipeline_status
+
+# def extract_project_status(state):
+#     work_items = get_work_items()
+#     sprint = get_iterations()
+#     pipeline = get_pipeline_status()
+
+#     return {
+#         "project_status": {
+#             "work_items": work_items,
+#             "current_sprint": sprint,
+#             "pipeline_status": pipeline
+#         },
+#         "risks": [],
+#         "alerts": []
+#     }
+
+
+
